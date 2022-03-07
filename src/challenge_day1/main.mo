@@ -1,9 +1,6 @@
 import Debug "mo:base/Debug";
 import Nat "mo:base/Nat";
 
-
-var b : Nat = 0;
-
 actor {
     public func greet(name : Text) : async Text {
         return "Hello, " # name # "!";
@@ -29,8 +26,26 @@ actor {
         a += n;
         return(a);
     };
-    public func clear_counter() : async () {
+    public func clear_counter() : async Text {
         a := 0;
-        //return("counter is 0 now!");
+        return("reset the counter!");
     };
+    //challenge 5
+    public func divide(n : Nat , m : Nat) : async Text {
+        if(n % m != 0) {
+            return("n can not be divided by m!");
+        }else {
+            return ("n can be divided by m!");
+        };
+    };
+    //challenge 6
+    public func is_even(n : Nat) : async Text {
+        if(n % 2 != 0) {
+            return("n is not even!");
+        }else {
+            return ("n is even!");
+        };
+    };
+    //challenge 7
+    
 };
