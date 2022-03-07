@@ -48,6 +48,7 @@ actor {
         };
     };
     //challenge 7
+    var sum : Nat = 0;
     public func sum_of_array(array : [Nat]) : async Nat {
         for (value in array.val()){
             sum := sum + value;
@@ -59,5 +60,13 @@ actor {
         return maximum(array, 0).0;
     };
     //challenge 9
-    
+    public func remove_from_array(array : [Nat], n : Nat) : async [Nat] {
+        let filtered_list : Lisr<Nat> = List.fromArray([]);
+        for (value in array.vals()){
+            if (value != n){
+                filtered_list.append(value);
+            };
+        };
+        return List.toArray(filtered_list);
+    }
 };
