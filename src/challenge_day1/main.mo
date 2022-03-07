@@ -1,5 +1,6 @@
 import Debug "mo:base/Debug";
 import Nat "mo:base/Nat";
+import Array "mo:base/Array";
 
 actor {
     public func greet(name : Text) : async Text {
@@ -47,5 +48,16 @@ actor {
         };
     };
     //challenge 7
+    public func sum_of_array(array : [Nat]) : async Nat {
+        for (value in array.val()){
+            sum := sum + value;
+        }
+        return(sum);
+    };
+    //challenge 8
+    public func maximum(array : [Nat]) : async Nat {
+        return maximum(array, 0).0;
+    };
+    //challenge 9
     
 };
